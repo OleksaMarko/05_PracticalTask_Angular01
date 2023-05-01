@@ -21,6 +21,19 @@
 </mat-toolbar>
 <mat-card>
   <mat-card-content>
-    <p>user works!</p>
+    <mat-card *ngFor="let user of $users | async" class="card">
+      <mat-card-content>
+        <div>id: {{ user.id }}</div>
+        <div>
+          name:
+          <b
+            ><span>{{ user.firstname }} {{ user.lastname }}</span></b
+          >
+        </div>
+        <div>email: {{ user.email }}</div>
+        <div>phone: {{ user.phone }}</div>
+      </mat-card-content>
+      <mat-card-actions>select</mat-card-actions>
+    </mat-card>
   </mat-card-content>
 </mat-card>
