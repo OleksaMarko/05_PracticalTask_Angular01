@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { UserService } from './user.service';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [UserComponent],
@@ -19,6 +20,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatCardModule,
     MatSelectModule,
     MatCheckboxModule,
+    ReactiveFormsModule,
   ],
   providers: [UserService],
   exports: [UserComponent],

@@ -45,7 +45,17 @@ export class UserService {
 
   constructor() {}
 
-  getUsers(): Observable<IUser[]> {
+  getUsers(val: string | null = ''): Observable<IUser[]> {
+    if (val?.length) {
+      let copy: IUser[] = [...this.users];
+      copy = copy.filter(
+        (user) =>
+          user.firstname.toLocaleLowerCase().includes(val.toLowerCase()) ||
+          user.lastname.toLocaleLowerCase().includes(val.toLowerCase()) ||
+          user.email.toLocaleLowerCase().includes(val.toLowerCase())
+      );
+      return of(copy);
+    }
     return of(this.users);
   }
 }
